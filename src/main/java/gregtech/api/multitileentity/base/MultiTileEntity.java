@@ -550,9 +550,8 @@ public abstract class MultiTileEntity extends CoverableTileEntity
         List<AxisAlignedBB> list) {
         if (boundingBoxToAdd.intersectsWith(boundingBoxToIntersect)) {
             return list.add(boundingBoxToAdd);
-        } else {
-            return false;
         }
+        return false;
     }
 
     public AxisAlignedBB box(float[] aBox) {

@@ -548,10 +548,11 @@ public abstract class MultiTileEntity extends CoverableTileEntity
 
     private boolean addToListIfIntersects(AxisAlignedBB boundingBoxToAdd, AxisAlignedBB boundingBoxToIntersect,
         List<AxisAlignedBB> list) {
-        if (!boundingBoxToAdd.intersectsWith(boundingBoxToIntersect)) return false;
-
-        list.add(boundingBoxToAdd);
-        return true;
+        if (boundingBoxToAdd.intersectsWith(boundingBoxToIntersect)) {
+            return list.add(boundingBoxToAdd);
+        } else {
+            return false;
+        }
     }
 
     public AxisAlignedBB box(float[] aBox) {
